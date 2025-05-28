@@ -1,0 +1,43 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+  }
+  
+  /* Headings */
+  /*
+  h1, h2, h3 {
+    font-weight: bold;
+    margin: 20px 0;
+  }
+  */
+
+  /* Paragraphs */
+  p {
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  /* Buttons */
+  /*
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+*/
+
+/* Custom Classes*/
+.calculatedOutput{
+    background-color: aquamarine;
+}
