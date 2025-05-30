@@ -1,72 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Metrics Calculator</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Metrics Calculator</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
- <!-- Option 1: Bootstrap Bundle with Popper -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    
-    <div class="mt-5 container-md">
-        <div class="row">
-          <div class="col-sm-6 calculatorInput">
-            <h2 class="mb-4 text"><b>Financial Metrics Calculator</b></h2>
-              <form>
-                <div class="row mb-3">
-                  <label for="profit" class="col-sm-5 col-form-label">Profit</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="inputProfit">
-                  </div>
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <div class="mt-5 container-md">
+    <div class="row">
+      <h1 class="text-center">Financial Metrics Calculator</h1>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <form id="financialMetricsForm">
+              <h2 class="mb-4 text"><b>Financial Metrics</b></h2>
+              <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Profit (billion)</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="profit" value="27.5" required>
                 </div>
-                <div class="row mb-3">
-                  <label for="avgShares" class="col-sm-5 col-form-label">Average Number of Shares</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="inputAvgShares">
-                  </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Average Number of Shares (billion)</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="avgShares" value="1.6" required>
                 </div>
-                <div class="row mb-3">
-                  <label for="pricePerShare" class="col-sm-5 col-form-label">Price per Shares</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="inputPerShare">
-                  </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Price per Shares</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="sharePrice" value="145.00" required>
                 </div>
-                <div class="row mb-3">
-                  <label for="totalAssets" class="col-sm-5 col-form-label">Total Assets</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="inputTotalAssets">
-                  </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Total Assets (billion)</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="totAssets" value="194" required>
                 </div>
-                <div class="row mb-3">
-                  <label for="totalLiabilities" class="col-sm-5 col-form-label">Total Liabilities</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="inputTotalLiabilities">
-                  </div>
-                </div> 
-                <div class="row mb-3">
-                  <label for="expectedGrowth" class="col-sm-5 col-form-label">% Expected Growth</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="inputExpectedGrowth">
-                  </div> 
-                </div>   
-                <br>   
-                <button id="btnClr" type="submit" class="btn btn-primary clear">Clear</button>
-                <button id="btnCalc" type="submit" class="btn btn-success calculate">Calculate</button>
-              </form> 
-          </div>
-          <div class="col-sm-6 calculatedOutput">
-            <h2 class="mb-4 text"><b>Performance Metrics</b></h2>
-            <p id="eps"><b>Earnings per Share: </b></p>
-            <p id="p/b"><b>Price to Book Ratio (P/B): </b></p>
-            <p id="p/e"><b>Price-to-Earnings (P/E) Ratio: </b></p>
-            <p id="peg"><b>PEG (Price/Earnings to Growth) Ratio:</b></p>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">Total Liabilities (billion)</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="totLiabilities" value="100" required>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label class="col-sm-5 col-form-label">% Expected Growth</label>
+                <div class="col-sm-5">
+                  <input type="text" class="form-control" id="expectedGrowth" value="4" required>
+                </div>
+              </div>
+              <br>
+              <button id="btnCalc" type="button" class="btn btn-success calculate"
+                onclick="calculate()">Calculate</button>
+              <button id="btnClr" type="button" class="btn btn-primary clear" onclick="clearResults()">Clear</button>
+            </form>
           </div>
         </div>
       </div>
 
+
+      <div id="results" class="col-sm-6 d-none">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="mb-4 text"><b>Performance Metrics Results</b></h2>
+            <p>Earnings per Share (EPS): <span id="eps"></span></p>
+            <p>Price to Book Ratio (P/B): <span id="pb"></span> </p>
+            <p>Price-to-Earnings (P/E) Ratio: <span id="pe"></span> </p>
+            <p>PEG (Price/Earnings to Growth) Ratio: <span id="peg"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
 </body>
+
 </html>
